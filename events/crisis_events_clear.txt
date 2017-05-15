@@ -1,0 +1,56 @@
+### PRETHORYN SCOURGE
+
+
+# Unbidden Invasion Clear
+country_event = {
+	id = crisis.2341
+	hide_window = yes
+	fire_only_once = no
+	
+	trigger = {
+		is_crises_allowed = yes
+		is_country_type = default
+		exists = capital_scope
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_global_flag = extradimensional_invasion_happened
+		remove_global_flag = galactic_crisis_happened
+		every_country = {
+			limit = {
+				#is_ai = no
+				is_country_type = default
+			}
+		}
+	}
+}
+
+
+
+# Prethoryn Invasion Clear
+country_event = {
+	id = crisis.2340
+	hide_window = yes
+	fire_only_once = no
+	
+	trigger = {
+		is_crises_allowed = yes
+		is_country_type = default
+		exists = capital_scope
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_global_flag = prethoryn_invasion_happened
+		remove_global_flag = galactic_crisis_happened
+		every_country = {
+			limit = {
+				#is_ai = no
+				is_country_type = default
+			}
+		}
+	}
+}
