@@ -1,0 +1,45 @@
+# Possible Deposit Variables
+# modifier - weight, will replace the weight value
+# modifier - factor, will multiply the weight value
+# resources, resource and amount
+# station = station class in orbit to gather
+# if you mix resources that are not supposed to be collected by an orbital station remember to put is_orbital_slot = no
+
+d_betharian_deposit = {
+	resources = {
+		energy = 2
+		sr_betharian = 1
+	}
+	station = shipclass_mining_station
+	is_orbital_slot = no
+	
+	drop_weight = {
+		weight = 0
+		modifier = {
+			weight = 2
+			planet = {
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+					is_planet_class = pc_ocean
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_alpine
+					is_planet_class = pc_savannah
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			planet = {
+				solar_system = {
+					has_star_flag = empire_home_system
+				}
+			}
+		}			
+	}
+}
