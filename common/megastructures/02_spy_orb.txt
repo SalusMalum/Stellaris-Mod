@@ -150,7 +150,10 @@ spy_orb_1 = {
 	}
 
 	possible = {
-		from = { has_ascension_perk = ap_galactic_wonders }
+		from = { OR={
+			has_ascension_perk = ap_galactic_wonders
+			has_ascension_perk = ap_master_of_the_heavens
+		} }
 	}
 
 	sensor_range = 200
@@ -173,10 +176,10 @@ spy_orb_2 = {
 		energy = 10
 	}
 	possible = {
-		OR={
+		from = { OR={
 			has_ascension_perk = ap_galactic_wonders
 			has_ascension_perk = ap_master_of_the_heavens
-		}
+		} }
 	}
 	sensor_range = 400
 }
@@ -199,10 +202,10 @@ spy_orb_3 = {
 		energy = 12
 	}
 	possible = {
-		OR={
+		from = { OR={
 			has_ascension_perk = ap_galactic_wonders
 			has_ascension_perk = ap_master_of_the_heavens
-		}
+		} }
 	}
 	sensor_range = 600
 }
@@ -224,10 +227,10 @@ spy_orb_4 = {
 		energy = 15
 	}
 	possible = {
-		OR={
+		from = { OR={
 			has_ascension_perk = ap_galactic_wonders
 			has_ascension_perk = ap_master_of_the_heavens
-		}
+		} }
 	}
 
 	# effect implementation in game_rules (has_full_sensor_range)
