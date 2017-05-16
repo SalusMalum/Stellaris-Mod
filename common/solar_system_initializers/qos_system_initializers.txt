@@ -1,0 +1,318 @@
+### FALLEN EMPIRE HOME SYSTEMS
+
+@base_moon_distance = 10
+
+fes_fallen_1_3 = {
+	usage = custom_empire
+	flags = { empire_home_system }
+	class = "sc_g"
+	name = "Stabilios"
+	
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "large_debris_object"
+				entity_offset_height = { min = -0 max = -25 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "large_debris_object"
+				entity_offset_height = { min = -0 max = -25 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = 145
+				}
+			}
+			create_ambient_object = {
+				type = "large_debris_object"
+				entity_offset_height = { min = -0 max = -25 }
+				location = this
+			}
+			last_created_ambient_object = { 
+				set_location = {
+					target = prev
+					distance = 45
+					angle = 210
+				}
+			}
+		}
+	}
+	
+	change_orbit = 45
+
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_Eternal_Bastion"
+		orbit_angle = -30
+		orbit_distance = 0
+		starting_planet = yes
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			change_pc = "pc_ringworld_habitable" 
+			prevent_anomaly = yes
+        	random_tile = {
+				limit = { has_blocker = no has_building = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_1"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}					
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 2
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_hydroponics_farm_1"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}							
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_power_plant_1"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}						
+				}
+				random_neighboring_tile = {
+					limit = { has_blocker = no has_building = no }
+					set_building = "building_mining_network_1"
+					add_resource = {
+						resource = minerals
+						amount = 2
+						replace = yes
+					}						
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_basic_science_lab_1"
+				random_list = {
+					33 = { 
+						add_resource = {
+							resource = engineering_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = physics_research
+							amount = 1
+							replace = yes
+						}						
+					}
+					33 = { 
+						add_resource = {
+							resource = society_research
+							amount = 1
+							replace = yes
+						}						
+					}					
+				}					
+			}	
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_mining_network_1"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}						
+			}			
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = engineering_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = society_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_failing_infrastructure"
+				add_resource = {
+					resource = physics_research
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = food
+					amount = 2
+					replace = yes
+				}					
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_blocker = "tb_decrepit_dwellings"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}				
+			}
+			random_tile = {
+				limit = { has_blocker = no has_building = no }
+				set_building = "building_power_plant_1"
+				add_resource = {
+					resource = energy
+					amount = 2
+					replace = yes
+				}				
+			}			
+		}
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "NAME_Ring_Section_C"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_Ring_Section_E"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	
+	
+	
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "Industrial District"
+		orbit_angle = 120
+		orbit_distance = 0
+		tile_blockers = none
+		modifiers = none
+	}
+	
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "NAME_Ring_Section_G"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_Ring_Section_F"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	init_effect = {
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 90
+			orbit_distance = 45
+			location = planet
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 270
+			orbit_distance = 45
+			location = planet
+		}
+		
+		spawn_megastructure = {
+			type = "dyson_sphere_ruined"
+			orbit_angle = 270
+			orbit_distance = 0
+			location = planet
+		}
+		
+
+		create_ambient_object = {
+			type = "large_debris_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "large_debris_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "large_debris_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "medium_debris_01_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "medium_debris_02_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "medium_debris_01_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "medium_debris_02_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "small_debris_object"
+			location = solar_system
+		}
+	}
+	
+	neighbor_system = {
+		distance = { min = 10 max = 50 }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		distance = { min = 10 max = 50 }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
