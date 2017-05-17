@@ -9,6 +9,12 @@ trait_perfection = {
 	initial = yes
 	modification = no
 	
+	opposites = { 
+		"trait_nonadaptive"
+		"trait_extremely_adaptive"
+		"trait_robust"
+	}
+	
 	modifier = {
 		pop_consumer_goods_mult = -0.1
 		pop_environment_tolerance = -2.0
