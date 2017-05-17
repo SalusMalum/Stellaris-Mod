@@ -1,0 +1,84 @@
+Master_Assembly_Network_System = {
+	icon = "Fancy_Placeholder"   
+	#Need a graphic
+	section = "NETWORKING_SPACEPORT_SECTION"
+	construction_days = 360
+	prerequisites = { "special_unique_tech" }
+	spaceport_level = 6
+	empire_unique = yes
+	cost = {
+		minerals = 500
+	}
+	
+	modifier = {
+		spaceport_ship_build_time_mult = -1.00
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}
+	}
+}
+
+Slave_Assembly_Network_System = {
+	icon = "Fancy_Placeholder_Dos"   
+	#Need a graphic
+	section = "NETWORKING_SPACEPORT_SECTION"
+	construction_days = 180
+	prerequisites = { "tech_doctrine_fleet_support" }
+	spaceport_level = 6
+	empire_unique = no
+	
+	cost = {
+		minerals = 250
+	}
+	
+	modifier = {
+		spaceport_ship_build_time_mult = 1.00
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1
+			from = { sector_controlled = yes }
+		}
+	}
+}
+Rapid_Construction_Policy = {
+	icon = "Fancy_Placeholder_drei"
+	section = "POILCY_SPACEPORT_SECTION"
+	construction_days = 240
+	prerequisites = { "tech_doctrine_construction_policy" }
+	spaceport_level = 3
+	cost = {
+		minerals = 0
+	}
+	modifier = {
+		spaceport_ship_build_time_mult = -.75
+	}
+	ship_modifier = {
+		ship_upkeep_mult = 0.1
+		ship_fire_rate_mult = -0.1
+		ship_accuracy_add = -3
+		ship_tracking_add = -3
+		ship_shield_regen_mult = .1
+		ship_flt_warp_range_mult = -.1
+		ship_ftl_hyper_range_mult = -.1
+		ship_ftl_jumpdrive_range_mult = -.1
+		ship_hitpoints_mult = -.1
+		shio armor mult = -.1
+		ship_speed_mult = -.1
+	}
+	required_resources = {
+		minerals = 2
+	}
+  ai_weight = {
+		modifier = {
+			factor = 0
+			from = { sector_controlled = yes }
+		}
+	}
+}
+	
