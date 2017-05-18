@@ -1,0 +1,63 @@
+# Master spaceport modifier
+country_event = {
+	id = qol.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		root = { set_variable = { 
+				which = number_slave_modules 
+				value = 0
+			} }
+		country = {
+			every_spaceport = {
+				limit = {
+					has_spaceport_module = SOMETHING
+				}
+				root = { change_variable = {
+						which = number_slave_modules
+						value = 1
+				}	}
+			prev = {
+				every_spaceport = {
+					limit = {
+						has_spaceport_module = SOMETHING
+					}
+					if = { 
+						limit = {
+							root = { check_variable = { 
+								which = number_slave_modules
+								value = 0
+							} }
+						}
+						add_modifier = {
+							modifier = qol_master_slave_shipyards_0
+						}
+						root = { change_variable = {
+							which = number_slave_modules
+							value = 0
+						} }
+					}
+					
+					if = { 
+						limit = {
+							root = { check_variable = { 
+								which = number_slave_modules
+								value = 1
+							} }
+						}
+						add_modifier = {
+							modifier = qol_master_slave_shipyards_1
+						}
+						root = { change_variable = {
+							which = number_slave_modules
+							value = 0
+						} }
+					}
+				}
+				
+			}
+			}
+		}
+	}
+}
